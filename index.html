@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chords with Emojis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            margin-top: 150px;
+            margin-left: 40px;
+        }
+
+        .chord {
+            text-align: center;
+            border: 1px solid black;
+            padding: 10px;
+            position: relative;
+            width: 370px;
+            height: 330px;
+        }
+
+        .chord img {
+            width: 300px;
+            height: 300px;
+        }
+
+        span {
+            cursor: pointer;
+            font-size: 1.5rem;
+            padding: 10px 0;
+            transition: color 0.3s ease, font-size 0.3s ease;
+            /* Smooth transition */
+        }
+
+        .heart {
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            margin-bottom: 15px;
+            color: red;
+            
+        }
+        .whatsapp i {
+            color: green;
+            
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="chord">
+            <span class="heart" onclick="addtofav(this)"><i class="fa-regular fa-heart"></i></span>
+            <img src="images/th (1).jpeg" alt="Chord 1">
+            <br>
+            <span class="whatsapp" onclick="changefontsize(this)"><i class="fa-brands fa-whatsapp"></i> Share</span>
+        </div>
+        <div class="chord">
+            <span class="heart" onclick="addtofav(this)"><i class="fa-regular fa-heart"></i></span>
+            <img src="images/th (2).jpeg" alt="Chord 2">
+            <br>
+            <span class="whatsapp" onclick="changefontsize(this)"><i class="fa-brands fa-whatsapp"></i> Share</span>
+        </div>
+        <div class="chord">
+            <span class="heart" onclick="addtofav(this)"><i class="fa-regular fa-heart"></i></span>
+            <img src="images/th.jpeg" alt="Chord 3">
+            <br>
+            <span class="whatsapp" onclick="changefontsize(this)"><i class="fa-brands fa-whatsapp"></i> Share</span>
+        </div>
+    </div>
+
+    <script>
+        function addtofav(element) {
+            const icon = element.querySelector('i');
+
+            if (icon.classList.contains('fa-regular')) {
+                icon.classList.remove('fa-regular');
+                icon.classList.add('fa-solid');
+                element.style.fontSize = "2rem";
+            } else {
+                icon.classList.remove('fa-solid');
+                icon.classList.add('fa-regular');
+                element.style.fontSize = "1.5rem";
+            }
+        }
+        function changefontsize(element) {
+            const icon = element.querySelector('i');
+
+            if (icon.style.fontSize === "2rem") {
+                icon.style.fontSize = "1.5rem"; 
+            } else {
+                icon.style.fontSize = "2rem"; 
+            }
+        }
+
+        
+    </script>
+
+</body>
+
+</html>
